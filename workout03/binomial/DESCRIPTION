@@ -1,0 +1,11 @@
+Package: Binomial
+Type: Package
+Title: Tools for Assessing a Binomial Distribution
+Version: 0.1.0
+Author: Yousuf Husain
+Maintainer: Yousuf Husain <yousufhusain@berkeley.edu>
+Description: Formulas and functions to use when determining a binomial distribution.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1

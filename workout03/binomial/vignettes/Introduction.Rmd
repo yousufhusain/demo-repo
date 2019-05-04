@@ -1,0 +1,74 @@
+---
+title: "Binomial Package"
+author: "Yousuf Husain"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Binomial Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+library(Binomial)
+library(ggplot2)
+```
+
+**About the Binomial Package**
+"The binomial distribution is a probability distribution that summarizes the likelihood that a value will take one of two independent values under a given set of parameters or assumptions. The underlying assumptions of the binomial distribution are that there is only one outcome for each trial, that each trial has the same probability of success, and that each trial is mutually exclusive, or independent of each other." (Investopedia)
+
+
+"The binomial distribution is a common discrete distribution used in statistics, as opposed to a continuous distribution, such as the normal distribution. This is because the binomial distribution only counts two states, typically represented as 1 (for a success) or 0 (for a failure) given a number of trials in the data. The binomial distribution, therefore, represents the probability for x successes in n trials, given a success probability p for each trial." (Investopedia)
+
+In essence, the binomial distribution is extremely significant in probability theory and statistics. It is widely used as a model to calculate probabilities about the number of successes in a number of identical trials. This brief report will explain how to use the binomial package to determine the binomial distribution.
+
+**First Step**
+The first step is to calculate the number of combinations in which k successes occur in n trials. To do this, the formula bin_choose is used, as shown below:
+
+```{r}
+bin_choose(n = 5, k = 2)
+```
+
+**Second Step**
+The second step is to calculate the probability in which k successes occur in n trials with a constant probability of success.  To do this, the formula bin_probability is used, as shown below: 
+
+```{r}
+bin_probability(success = 5, trials = 10, prob = 0.25)
+```
+
+**Third Step**
+The third step is to obtain and plot the probability distribution data. To do this, the formulas bin_distribution and plot are used, as shown below: 
+
+```{r}
+prob_distribution <- bin_distribution(trials = 10, prob = 0.25)
+plot(prob_distribution)
+```
+
+**Fourth Step**
+The fourth step is to obtain and plot the cumulative distribution data. To do this, the formulas bin_cumulative and plot are used, as shown below:
+
+```{r}
+cum_distribution <- bin_cumulative(trials = 10, prob = 0.25)
+plot(cum_distribution)
+```
+
+**Fifth Step**
+The fifth step is to determine a list of named elements and summary statistics for a set of binomial variables. To do this, the formulas bin_variable and summary are used, as shown below:
+
+```{r}
+list <- bin_variable (trials = 10, prob = 0.25)
+list <- summary(list)
+```
+
+**Sixth Step**
+The sixth step is to find the mean, variance, mode, skewness, and kurtosis of the binomial distribution. To do this, various functions are used, as shown below:
+
+```{r}
+bin_mean(10, 0.25)
+bin_variance(10, 0.25)
+bin_mode(10, 0.25)
+bin_skewness(10, 0.25)
+bin_kurtosis(10, 0.25)
+```
+
